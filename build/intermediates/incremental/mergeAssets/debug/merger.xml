@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="unspecified" >
+        <source path="Z:\devel\build\intermediates\exploded-aar\devel.OpenCV-2.4.9-android-sdk.sdk\java\unspecified\assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="Z:\devel\OpenCV-2.4.9-android-sdk\samples\tutorial-2-mixedprocessing\assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="Z:\devel\OpenCV-2.4.9-android-sdk\samples\tutorial-2-mixedprocessing\build-types\debug\assets" />
+    </dataSet>
+
+</merger>
