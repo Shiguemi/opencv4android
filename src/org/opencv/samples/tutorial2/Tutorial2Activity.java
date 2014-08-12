@@ -44,7 +44,7 @@ public class Tutorial2Activity extends ActionBarActivity implements CvCameraView
     private MenuItem               mItemPreviewFeatures;
 
     private CameraBridgeViewBase   mOpenCvCameraView;
-    private FlannMatch flann;
+    private SurfMatch flann;
 
     private BaseLoaderCallback  mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -60,7 +60,7 @@ public class Tutorial2Activity extends ActionBarActivity implements CvCameraView
                     mOpenCvCameraView.enableView();
                     
                     // Initializing local objects
-                    flann = new FlannMatch();
+                    flann = new SurfMatch();
                     flann.setNeedle("icon.png");
                     
                 } break;
