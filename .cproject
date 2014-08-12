@@ -4,7 +4,7 @@
 		<cconfiguration id="0.1227367918">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.1227367918" moduleId="org.eclipse.cdt.core.settings" name="Default">
 				<macros>
-					<stringMacro name="NDKROOT" type="VALUE_TEXT" value="/home/ldinnout/devel/android-ndk-r9d"/>
+					<stringMacro name="NDKROOT" type="VALUE_TEXT" value="D:\android-ndk-r9d"/>
 				</macros>
 				<externalSettings/>
 				<extensions>
@@ -21,7 +21,7 @@
 					<folderInfo id="0.1227367918." name="/" resourcePath="">
 						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.1817556292" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
 							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.1817556292.437475188" name=""/>
-							<builder autoBuildTarget="" command="${NDKROOT}/ndk-build" enableAutoBuild="true" enableCleanBuild="false" id="org.eclipse.cdt.build.core.settings.default.builder.141883337" incrementalBuildTarget="" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<builder autoBuildTarget="" command="${NDKROOT}/ndk-build.cmd" enableAutoBuild="true" enableCleanBuild="false" id="org.eclipse.cdt.build.core.settings.default.builder.141883337" incrementalBuildTarget="" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" stopOnErr="true" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.914869649" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1504728878" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1470189286" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
@@ -52,14 +52,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<folderInfo id="0.1227367918.667478988" name="/" resourcePath="jni">
-						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.2087994648" name="No ToolChain" superClass="org.eclipse.cdt.build.core.prefbase.toolchain" unusedChildren="">
-							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.447768723" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs.914869649"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.273575288" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder.1504728878"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1016046599" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder.260316541"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1425500655" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder.1147885196"/>
-						</toolChain>
-					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
@@ -77,10 +69,8 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="refreshScope" versionNumber="2">
-		<configuration configurationName="Default">
-			<resource resourceType="PROJECT" workspacePath="/OpenCV Tutorial 2 - Mixed Processing"/>
-		</configuration>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/OpenCV Tutorial 2 - Mixed Processing"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 </cproject>
