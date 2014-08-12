@@ -44,7 +44,7 @@ public class Tutorial2Activity extends ActionBarActivity implements CvCameraView
     private MenuItem               mItemPreviewFeatures;
 
     private CameraBridgeViewBase   mOpenCvCameraView;
-    private SurfMatch flann;
+    private SurfMatch surf;
 
     private BaseLoaderCallback  mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -60,8 +60,8 @@ public class Tutorial2Activity extends ActionBarActivity implements CvCameraView
                     mOpenCvCameraView.enableView();
                     
                     // Initializing local objects
-                    flann = new SurfMatch();
-                    flann.setNeedle("icon.png");
+                    surf = new SurfMatch();
+                    //surf.setNeedle("icon.png");
                     
                 } break;
                 default:
@@ -147,7 +147,8 @@ public class Tutorial2Activity extends ActionBarActivity implements CvCameraView
             // input frame has RBGA format
             mRgba = inputFrame.rgba();
             // testing
-            mRgba = flann.stamp(mRgba);
+            //mRgba = surf.stamp(mRgba);
+            surf.relativeCoordinates(mRgba);
             break;
         case VIEW_MODE_CANNY:
             // input frame has gray scale format

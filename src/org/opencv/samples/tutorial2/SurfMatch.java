@@ -3,8 +3,11 @@ package org.opencv.samples.tutorial2;
 import java.io.File;
 
 import org.opencv.core.*;
+import org.opencv.features2d.DMatch;
 import org.opencv.features2d.DescriptorExtractor;
+import org.opencv.features2d.DescriptorMatcher;
 import org.opencv.features2d.FeatureDetector;
+import org.opencv.features2d.Features2d;
 import org.opencv.highgui.*;
 import org.opencv.imgproc.Imgproc;
 
@@ -24,9 +27,11 @@ public class SurfMatch {
 		//needle = Highgui.imread(path, Highgui.CV_LOAD_IMAGE_GRAYSCALE);
 		File file = new File(path);
 		Mat inputImage = Highgui.imread(file.getAbsolutePath());
-		needle = new Mat(inputImage.height(), inputImage.width(), CvType.CV_8UC1);
-		inputImage.convertTo(needle, CvType.CV_8UC1);
-		Imgproc.cvtColor(inputImage, needle, Imgproc.COLOR_RGBA2GRAY);
+		//needle = new Mat(inputImage.height(), inputImage.width(), CvType.CV_8UC1);
+		//inputImage.convertTo(needle, CvType.CV_8UC1);
+		needle = new Mat();
+		//needle = inputImage.clone();
+		Imgproc.cvtColor(inputImage, needle, Imgproc.COLOR_BGR2GRAY);
 		Log.i(TAG, "needle.height()=" + needle.height() + " needle.width()=" + needle.width());
 	}
 	
@@ -52,6 +57,21 @@ public class SurfMatch {
 		Mat logoDescriptors = new Mat();
 		surfExtractor.compute(img, keypoints, descriptors);
 		surfExtractor.compute(needle, logoKeypoints, logoDescriptors);
+		
+		DescriptorMatcher m = DescriptorMatcher.create(DescriptorMatcher.BRUTEFORCE);
+		MatOfDMatch matches = new MatOfDMatch();
+		
+		m.match(descriptors, logoDescriptors, matches);
+		
+		//Mat resp = new Mat();
+		//Features2d.drawMatches(mRgba, keypoints, needle, logoKeypoints, matches, resp);
+		DMatch[] arrayMatches = matches.toArray();
+		DMatch dm;
+		Log.i(TAG, "arrayMatches.length = " + arrayMatches.length);
+		for (int i=0; i < arrayMatches.length; i++) {
+			dm = arrayMatches[i];
+			Log.i(TAG, "Distance = " + dm.distance);
+		}
 		
 		return coordinates;
 	}
